@@ -1,0 +1,44 @@
+//Edward
+
+#include<stdio.h>
+#include<stdlib.h>
+
+int trans(int shift, int ch);
+
+int main(int argc, char *argv[]){
+
+    int shift = atoi(argv[1]);
+    int ch = getchar();
+    while (ch != EOF){
+        int newch = trans (shift,ch);
+        putchar(newch);
+        ch = getchar();
+    }
+    
+
+
+    return 0;
+}
+int trans(int shift, int ch){
+
+    while (shift < 0) {
+    shift += 26; 
+    }
+    if(ch >= 'a' && ch <= 'z'){
+        int a = shift % 26;
+        int b = ch + a;
+        if ( b > 'z'){
+            b = b - 26;
+        }
+        return b;  
+    } else if(ch >= 'A' && ch <= 'Z'){
+        int a = shift % 26;
+        int b = ch + a;
+        if ( b > 'Z'){
+            b = b - 26;
+        }
+        return b;
+    } else {
+    return ch;
+    }
+}

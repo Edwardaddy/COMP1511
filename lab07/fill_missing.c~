@@ -1,0 +1,43 @@
+//Edward
+#include<stdio.h>
+#define numbermax 10000
+int cool(int number[], int max ,int num);
+
+int main(void){
+    int a[numbermax]={};
+    int length=0; 
+    int max=0;
+    int min=1;
+    int x;
+    
+    while(scanf("%d",&a[length]) != EOF){
+        length++;
+    }
+    max = cool(a,max,length);
+    while(min < max){
+        x=0;
+        while(x < length){
+            if(a[x] == min){
+                x = x +numbermax;
+            }else{
+                x++;
+            }
+        }
+        if(x < numbermax){
+            printf("%d ",min);
+        }
+        min++;
+    }
+}
+
+
+int cool(int number[], int max , int num){
+    int i=0;
+    while(i<num){
+        if(number[i]>max){
+            max=number[i];
+        }
+        i++;
+    }
+    return max;
+}
