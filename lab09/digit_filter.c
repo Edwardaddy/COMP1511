@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int jay(int ch);
+
+int main(void) {
+    int ch = getchar();
+    int newch;
+    while (ch != EOF) {
+        newch = jay(ch);
+        putchar(newch);
+        ch = getchar();
+    }
+    return 0;
+}
+
+            
+int jay (int ch) {
+    if ((ch >= '0' && ch <= '9')|| ch == ' ' || ch=='\n') {
+        return ch;
+    } else {
+        return '.';
+    }
+
+
+}
+
